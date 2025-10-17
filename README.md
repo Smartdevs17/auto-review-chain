@@ -1,22 +1,13 @@
-# Welcome to your Lovable project
+# PeerAI
 
-## Project info
-
-**URL**: https://lovable.dev/projects/277cf2ee-1c04-482d-a0fc-cad1f844ed9c
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/277cf2ee-1c04-482d-a0fc-cad1f844ed9c) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -60,14 +51,16 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Build and preview
 
-Simply open [Lovable](https://lovable.dev/projects/277cf2ee-1c04-482d-a0fc-cad1f844ed9c) and click on Share -> Publish.
+Build:
 
-## Can I connect a custom domain to my Lovable project?
+```sh
+npm run build
+```
 
-Yes, you can!
+Preview locally:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```sh
+npm run preview
+```
