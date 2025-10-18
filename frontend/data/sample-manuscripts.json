@@ -1,0 +1,172 @@
+{
+  "manuscripts": [
+    {
+      "_id": "sample_1",
+      "title": "Advanced Machine Learning Techniques for Climate Prediction",
+      "authors": "Dr. Sarah Chen, Prof. Michael Rodriguez",
+      "abstract": "This paper presents novel machine learning approaches for improving climate prediction models. We introduce a hybrid neural network architecture that combines convolutional and recurrent layers to capture both spatial and temporal patterns in climate data. Our experiments on 20 years of historical data show a 15% improvement in prediction accuracy compared to traditional methods.",
+      "researchField": "Climate Science",
+      "keywords": ["machine learning", "climate prediction", "neural networks", "environmental modeling"],
+      "status": "submitted",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "updatedAt": "2024-01-15T10:30:00Z",
+      "authorId": {
+        "_id": "author_1",
+        "name": "Dr. Sarah Chen",
+        "walletAddress": "0x1234567890123456789012345678901234567890",
+        "institution": "MIT",
+        "researchField": "Climate Science"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    },
+    {
+      "_id": "sample_2",
+      "title": "Blockchain-Based Supply Chain Transparency in Agriculture",
+      "authors": "Dr. James Wilson, Dr. Maria Garcia",
+      "abstract": "We propose a blockchain solution for enhancing transparency in agricultural supply chains. The system tracks products from farm to consumer, ensuring food safety and reducing fraud. Our pilot study with 50 farms shows 90% reduction in supply chain disputes and increased consumer trust.",
+      "researchField": "Agricultural Technology",
+      "keywords": ["blockchain", "supply chain", "agriculture", "transparency", "food safety"],
+      "status": "submitted",
+      "createdAt": "2024-01-14T14:20:00Z",
+      "updatedAt": "2024-01-14T14:20:00Z",
+      "authorId": {
+        "_id": "author_2",
+        "name": "Dr. James Wilson",
+        "walletAddress": "0x2345678901234567890123456789012345678901",
+        "institution": "Stanford University",
+        "researchField": "Agricultural Technology"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    },
+    {
+      "_id": "sample_3",
+      "title": "Quantum Computing Applications in Drug Discovery",
+      "authors": "Prof. David Kim, Dr. Lisa Thompson",
+      "abstract": "This research explores the potential of quantum computing in accelerating drug discovery processes. We developed quantum algorithms for molecular simulation that can process complex protein interactions 1000x faster than classical computers. Initial results show promising applications in cancer drug development.",
+      "researchField": "Pharmaceutical Sciences",
+      "keywords": ["quantum computing", "drug discovery", "molecular simulation", "pharmaceuticals"],
+      "status": "submitted",
+      "createdAt": "2024-01-13T09:15:00Z",
+      "updatedAt": "2024-01-13T09:15:00Z",
+      "authorId": {
+        "_id": "author_3",
+        "name": "Prof. David Kim",
+        "walletAddress": "0x3456789012345678901234567890123456789012",
+        "institution": "Harvard Medical School",
+        "researchField": "Pharmaceutical Sciences"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    },
+    {
+      "_id": "sample_4",
+      "title": "AI-Powered Personalized Learning Systems",
+      "authors": "Dr. Emily Johnson, Dr. Robert Brown",
+      "abstract": "We present an AI-driven personalized learning platform that adapts to individual student needs. The system uses natural language processing and machine learning to create customized learning paths. A study with 1000 students shows 40% improvement in learning outcomes and 60% increase in engagement.",
+      "researchField": "Educational Technology",
+      "keywords": ["artificial intelligence", "personalized learning", "education", "machine learning"],
+      "status": "submitted",
+      "createdAt": "2024-01-12T16:45:00Z",
+      "updatedAt": "2024-01-12T16:45:00Z",
+      "authorId": {
+        "_id": "author_4",
+        "name": "Dr. Emily Johnson",
+        "walletAddress": "0x4567890123456789012345678901234567890123",
+        "institution": "Carnegie Mellon University",
+        "researchField": "Educational Technology"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    },
+    {
+      "_id": "sample_5",
+      "title": "Sustainable Energy Storage Solutions Using Graphene",
+      "authors": "Dr. Ahmed Hassan, Prof. Jennifer Lee",
+      "abstract": "This paper investigates graphene-based materials for next-generation energy storage. We developed a novel graphene composite that increases battery capacity by 300% while reducing charging time by 50%. The technology shows potential for revolutionizing electric vehicles and renewable energy storage.",
+      "researchField": "Materials Science",
+      "keywords": ["graphene", "energy storage", "batteries", "sustainable energy", "materials science"],
+      "status": "submitted",
+      "createdAt": "2024-01-11T11:30:00Z",
+      "updatedAt": "2024-01-11T11:30:00Z",
+      "authorId": {
+        "_id": "author_5",
+        "name": "Dr. Ahmed Hassan",
+        "walletAddress": "0x5678901234567890123456789012345678901234",
+        "institution": "University of California, Berkeley",
+        "researchField": "Materials Science"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    },
+    {
+      "_id": "sample_6",
+      "title": "Neural Networks for Early Disease Detection in Medical Imaging",
+      "authors": "Dr. Rachel Green, Dr. Mark Davis",
+      "abstract": "We developed a deep learning system for early detection of diseases in medical imaging. The CNN-based model can identify cancer, heart disease, and neurological conditions with 95% accuracy. The system reduces diagnosis time from days to minutes, potentially saving thousands of lives.",
+      "researchField": "Medical AI",
+      "keywords": ["neural networks", "medical imaging", "disease detection", "deep learning", "healthcare"],
+      "status": "submitted",
+      "createdAt": "2024-01-10T13:20:00Z",
+      "updatedAt": "2024-01-10T13:20:00Z",
+      "authorId": {
+        "_id": "author_6",
+        "name": "Dr. Rachel Green",
+        "walletAddress": "0x6789012345678901234567890123456789012345",
+        "institution": "Johns Hopkins University",
+        "researchField": "Medical AI"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    },
+    {
+      "_id": "sample_7",
+      "title": "Robotic Process Automation in Financial Services",
+      "authors": "Dr. Kevin Park, Dr. Anna Martinez",
+      "abstract": "This study examines the impact of RPA on financial services efficiency. We implemented RPA solutions across 20 financial institutions, resulting in 70% reduction in processing time and 85% decrease in human errors. The technology shows significant potential for cost reduction and improved customer service.",
+      "researchField": "Financial Technology",
+      "keywords": ["robotic process automation", "financial services", "automation", "fintech"],
+      "status": "submitted",
+      "createdAt": "2024-01-09T08:45:00Z",
+      "updatedAt": "2024-01-09T08:45:00Z",
+      "authorId": {
+        "_id": "author_7",
+        "name": "Dr. Kevin Park",
+        "walletAddress": "0x7890123456789012345678901234567890123456",
+        "institution": "New York University",
+        "researchField": "Financial Technology"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    },
+    {
+      "_id": "sample_8",
+      "title": "Virtual Reality Applications in Mental Health Therapy",
+      "authors": "Dr. Sophie Taylor, Prof. Carlos Rodriguez",
+      "abstract": "We explore the use of VR technology in treating anxiety, PTSD, and phobias. Our VR therapy program shows 80% success rate in reducing symptoms after 8 weeks of treatment. The immersive environment provides a safe space for patients to confront their fears and develop coping strategies.",
+      "researchField": "Digital Health",
+      "keywords": ["virtual reality", "mental health", "therapy", "VR", "psychological treatment"],
+      "status": "submitted",
+      "createdAt": "2024-01-08T15:10:00Z",
+      "updatedAt": "2024-01-08T15:10:00Z",
+      "authorId": {
+        "_id": "author_8",
+        "name": "Dr. Sophie Taylor",
+        "walletAddress": "0x8901234567890123456789012345678901234567",
+        "institution": "University of Toronto",
+        "researchField": "Digital Health"
+      },
+      "reviews": [],
+      "averageRating": 0,
+      "reviewCount": 0
+    }
+  ]
+}
