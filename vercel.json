@@ -1,0 +1,23 @@
+{
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "cd frontend && npm ci",
+  "framework": "vite",
+  "functions": {
+    "app/api/**/*.js": {
+      "maxDuration": 30
+    }
+  },
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=4096"
+    }
+  },
+  "env": {
+    "VITE_PEERAI_TOKEN_ADDRESS": "@peerai_token_address",
+    "VITE_PEERAI_CORE_ADDRESS": "@peerai_core_address",
+    "VITE_ALCHEMY_RPC_URL": "@alchemy_rpc_url",
+    "VITE_WALLETCONNECT_PROJECT_ID": "@walletconnect_project_id",
+    "VITE_BACKEND_URL": "@backend_url"
+  }
+}

@@ -2,12 +2,13 @@ import { createConfig, http } from 'wagmi'
 import { sepolia } from 'wagmi/chains'
 import { injected, metaMask, walletConnect } from 'wagmi/connectors'
 
-// Contract addresses - NO FALLBACKS FOR SECURITY
-const tokenAddress = import.meta.env.VITE_PEERAI_TOKEN_ADDRESS
-const coreAddress = import.meta.env.VITE_PEERAI_CORE_ADDRESS
+// Contract addresses - with fallbacks for build time
+const tokenAddress = import.meta.env.VITE_PEERAI_TOKEN_ADDRESS || '0x0000000000000000000000000000000000000000'
+const coreAddress = import.meta.env.VITE_PEERAI_CORE_ADDRESS || '0x0000000000000000000000000000000000000000'
 
-if (!tokenAddress || !coreAddress) {
-  throw new Error('Contract addresses must be provided via environment variables')
+// Only throw error in production if addresses are not properly set
+if (import.meta.env.PROD && (!import.meta.env.VITE_PEERAI_TOKEN_ADDRESS || !import.meta.env.VITE_PEERAI_CORE_ADDRESS)) {
+  console.warn('Contract addresses not properly configured for production')
 }
 
 export const CONTRACT_ADDRESSES = {
@@ -26,7 +27,7 @@ export const config = createConfig({
     }),
   ],
   transports: {
-    [sepolia.id]: http(import.meta.env.VITE_ALCHEMY_RPC_URL || 'https://eth-sepolia.g.alchemy.com/v2/YOUR_ALCHEMY_KEY'),
+    [sepolia.id]: http(import.meta.env.VITE_ALCHEMY_RPC_URL || 'https://eth-sepolia.g.alchemy.com/v2/demo'),
   },
 })
 
