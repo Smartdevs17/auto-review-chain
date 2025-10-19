@@ -1,4 +1,4 @@
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001'
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'https://auto-review-chain-production.up.railway.app'
 
 // Types
 export interface UserProfile {
@@ -168,15 +168,29 @@ export const backendAPI = {
 
 		// Get user by wallet address
 		async getByWalletAddress(address: string) {
-			const response = await fetch(`${BACKEND_URL}/users/wallet/${address}`)
-			if (!response.ok) {
-				if (response.status === 404) {
-					throw new Error('User not found')
+			try {
+				const response = await fetch(`${BACKEND_URL}/users/wallet/${address}`)
+				
+				// Check if we got HTML instead of JSON (backend not available)
+				const contentType = response.headers.get('content-type')
+				if (contentType && contentType.includes('text/html')) {
+					throw new Error('Backend not available - please check your VITE_BACKEND_URL environment variable')
 				}
-				const error = await response.json()
-				throw new Error(error.message || 'Failed to get user')
+				
+				if (!response.ok) {
+					if (response.status === 404) {
+						throw new Error('User not found')
+					}
+					const error = await response.json()
+					throw new Error(error.message || 'Failed to get user')
+				}
+				return response.json()
+			} catch (error) {
+				if (error.message.includes('fetch')) {
+					throw new Error('Backend not available - please check your VITE_BACKEND_URL environment variable')
+				}
+				throw error
 			}
-			return response.json()
 		},
 
 		// Get current user profile (requires authentication)

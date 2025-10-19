@@ -16,6 +16,7 @@ async function bootstrap() {
 			'http://localhost:8081',
 			'http://localhost:3000',
 			'https://auto-review-chain.vercel.app',
+			'https://auto-review-chain-production.up.railway.app',
 			configService.get('CORS_ORIGIN')
 		].filter(Boolean),
 		methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
