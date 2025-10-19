@@ -110,6 +110,12 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
           description: 'You are registered on the blockchain and can use all features.',
           duration: 4000,
         })
+        
+        // If user is registered on blockchain, refetch profile to get blockchain data
+        if (walletAddress) {
+          console.log('🔍 User is registered on blockchain, refetching profile...')
+          await fetchUserProfile(walletAddress)
+        }
       }
     } catch (error) {
       console.error('Error checking blockchain registration:', error)
@@ -125,21 +131,47 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
       const normalizedAddress = utils.normalizeAddress(address)
       console.log('Fetching profile for normalized address:', normalizedAddress)
       
+      let profile = null
+      
       // First try to get from backend database
-      const profile = await backendAPI.users.getByWalletAddress(normalizedAddress)
-      setUserProfile(profile)
-      console.log('User profile loaded from backend:', profile)
-    } catch (error) {
-      console.log('User profile fetch result:', error.message)
-      // If user is not found in backend, that's expected - set to null to show registration form
-      if (error.message?.includes('not found') || error.message?.includes('User not found')) {
-        setUserProfile(null)
-        console.log('User not found in backend - showing registration form')
-      } else {
-        // For other errors, still set to null but log the error
-        console.error('Error fetching user profile:', error)
-        setUserProfile(null)
+      try {
+        profile = await backendAPI.users.getByWalletAddress(normalizedAddress)
+        console.log('User profile loaded from backend:', profile)
+      } catch (backendError) {
+        console.log('User not found in backend:', backendError.message)
+        
+        // If user is registered on blockchain but not in backend, fetch from blockchain
+        if (isBlockchainRegistered === true) {
+          console.log('User is registered on blockchain, fetching profile from blockchain...')
+          try {
+            const blockchainProfile = await blockchainService.getUserProfile(normalizedAddress)
+            console.log('User profile loaded from blockchain:', blockchainProfile)
+            
+            // Convert blockchain profile to backend format
+            profile = {
+              _id: blockchainProfile.userAddress, // Use wallet address as ID
+              walletAddress: blockchainProfile.userAddress,
+              name: blockchainProfile.name,
+              institution: blockchainProfile.institution,
+              researchField: blockchainProfile.researchField,
+              expertise: blockchainProfile.expertise,
+              reputationScore: blockchainProfile.reputationScore,
+              totalReviews: blockchainProfile.totalReviews,
+              tokensEarned: blockchainProfile.tokensEarned,
+              isVerified: blockchainProfile.isVerified,
+              isBlockchainRegistered: true
+            }
+          } catch (blockchainError) {
+            console.error('Failed to fetch profile from blockchain:', blockchainError)
+            profile = null
+          }
+        }
       }
+      
+      setUserProfile(profile)
+    } catch (error) {
+      console.error('Error fetching user profile:', error)
+      setUserProfile(null)
     } finally {
       setIsProfileLoading(false)
     }
